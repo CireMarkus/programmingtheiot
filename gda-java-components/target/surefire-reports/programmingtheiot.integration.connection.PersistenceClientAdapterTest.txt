@@ -1,0 +1,32 @@
+-------------------------------------------------------------------------------
+Test set: programmingtheiot.integration.connection.PersistenceClientAdapterTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 7, Errors: 0, Skipped: 0, Time elapsed: 0.002 s <<< FAILURE! - in programmingtheiot.integration.connection.PersistenceClientAdapterTest
+programmingtheiot.integration.connection.PersistenceClientAdapterTest.testGetSensorData  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: Not yet implemented
+	at programmingtheiot.integration.connection.PersistenceClientAdapterTest.testGetSensorData(PersistenceClientAdapterTest.java:114)
+
+programmingtheiot.integration.connection.PersistenceClientAdapterTest.testDisconnectClient  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: Not yet implemented
+	at programmingtheiot.integration.connection.PersistenceClientAdapterTest.testDisconnectClient(PersistenceClientAdapterTest.java:96)
+
+programmingtheiot.integration.connection.PersistenceClientAdapterTest.testStoreDataStringIntActuatorDataArray  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: Not yet implemented
+	at programmingtheiot.integration.connection.PersistenceClientAdapterTest.testStoreDataStringIntActuatorDataArray(PersistenceClientAdapterTest.java:123)
+
+programmingtheiot.integration.connection.PersistenceClientAdapterTest.testStoreDataStringIntSensorDataArray  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: Not yet implemented
+	at programmingtheiot.integration.connection.PersistenceClientAdapterTest.testStoreDataStringIntSensorDataArray(PersistenceClientAdapterTest.java:132)
+
+programmingtheiot.integration.connection.PersistenceClientAdapterTest.testConnectClient  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: Not yet implemented
+	at programmingtheiot.integration.connection.PersistenceClientAdapterTest.testConnectClient(PersistenceClientAdapterTest.java:87)
+
+programmingtheiot.integration.connection.PersistenceClientAdapterTest.testGetActuatorData  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: Not yet implemented
+	at programmingtheiot.integration.connection.PersistenceClientAdapterTest.testGetActuatorData(PersistenceClientAdapterTest.java:105)
+
+programmingtheiot.integration.connection.PersistenceClientAdapterTest.testStoreDataStringIntSystemPerformanceDataArray  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.AssertionError: Not yet implemented
+	at programmingtheiot.integration.connection.PersistenceClientAdapterTest.testStoreDataStringIntSystemPerformanceDataArray(PersistenceClientAdapterTest.java:141)
+

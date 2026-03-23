@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: programmingtheiot.integration.connection.CoapClientToServerConnectorTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in programmingtheiot.integration.connection.CoapClientToServerConnectorTest
+programmingtheiot.integration.connection.CoapClientToServerConnectorTest  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError
+	at programmingtheiot.integration.connection.CoapClientToServerConnectorTest.setUpBeforeClass(CoapClientToServerConnectorTest.java:62)
+
+programmingtheiot.integration.connection.CoapClientToServerConnectorTest  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError
+	at programmingtheiot.integration.connection.CoapClientToServerConnectorTest.tearDownAfterClass(CoapClientToServerConnectorTest.java:71)
+

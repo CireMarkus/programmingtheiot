@@ -1,0 +1,28 @@
+-------------------------------------------------------------------------------
+Test set: programmingtheiot.integration.data.DataIntegrationTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 6, Errors: 0, Skipped: 0, Time elapsed: 0.192 s <<< FAILURE! - in programmingtheiot.integration.data.DataIntegrationTest
+programmingtheiot.integration.data.DataIntegrationTest.testReadActuatorDataFromCdaDataPath  Time elapsed: 0.049 s  <<< FAILURE!
+java.lang.AssertionError: Failed to read file: /tmp/cda-data/ActuatorData.dat
+	at programmingtheiot.integration.data.DataIntegrationTest.testReadActuatorDataFromCdaDataPath(DataIntegrationTest.java:211)
+
+programmingtheiot.integration.data.DataIntegrationTest.testWriteSystemPerformanceDataToGdaDataPath  Time elapsed: 0.005 s  <<< FAILURE!
+java.lang.AssertionError: Failed to read file: /tmp/gda-data/SystemPerformanceData.dat
+	at programmingtheiot.integration.data.DataIntegrationTest.testWriteSystemPerformanceDataToGdaDataPath(DataIntegrationTest.java:185)
+
+programmingtheiot.integration.data.DataIntegrationTest.testReadSystemPerformanceDataFromCdaDataPath  Time elapsed: 0.003 s  <<< FAILURE!
+java.lang.AssertionError: Failed to read file: /tmp/cda-data/SystemPerformanceData.dat
+	at programmingtheiot.integration.data.DataIntegrationTest.testReadSystemPerformanceDataFromCdaDataPath(DataIntegrationTest.java:263)
+
+programmingtheiot.integration.data.DataIntegrationTest.testWriteActuatorDataToGdaDataPath  Time elapsed: 0.008 s  <<< FAILURE!
+java.lang.AssertionError: Failed to read file: /tmp/gda-data/ActuatorData.dat
+	at programmingtheiot.integration.data.DataIntegrationTest.testWriteActuatorDataToGdaDataPath(DataIntegrationTest.java:133)
+
+programmingtheiot.integration.data.DataIntegrationTest.testWriteSensorDataToGdaDataPath  Time elapsed: 0.007 s  <<< FAILURE!
+java.lang.AssertionError: Failed to read file: /tmp/gda-data/SensorData.dat
+	at programmingtheiot.integration.data.DataIntegrationTest.testWriteSensorDataToGdaDataPath(DataIntegrationTest.java:159)
+
+programmingtheiot.integration.data.DataIntegrationTest.testReadSensorDataFromCdaDataPath  Time elapsed: 0.003 s  <<< FAILURE!
+java.lang.AssertionError: Failed to read file: /tmp/cda-data/SensorData.dat
+	at programmingtheiot.integration.data.DataIntegrationTest.testReadSensorDataFromCdaDataPath(DataIntegrationTest.java:237)
+

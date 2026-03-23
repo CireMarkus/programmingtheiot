@@ -1,0 +1,40 @@
+-------------------------------------------------------------------------------
+Test set: programmingtheiot.integration.connection.CoapClientConnectorTest
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 9, Errors: 0, Skipped: 0, Time elapsed: 0.034 s <<< FAILURE! - in programmingtheiot.integration.connection.CoapClientConnectorTest
+programmingtheiot.integration.connection.CoapClientConnectorTest.testConnectAndDiscover  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError
+	at programmingtheiot.integration.connection.CoapClientConnectorTest.testConnectAndDiscover(CoapClientConnectorTest.java:100)
+
+programmingtheiot.integration.connection.CoapClientConnectorTest.testPutRequestCon  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.AssertionError
+	at programmingtheiot.integration.connection.CoapClientConnectorTest.testPutRequestCon(CoapClientConnectorTest.java:176)
+
+programmingtheiot.integration.connection.CoapClientConnectorTest.testPutRequestNon  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.AssertionError
+	at programmingtheiot.integration.connection.CoapClientConnectorTest.testPutRequestNon(CoapClientConnectorTest.java:194)
+
+programmingtheiot.integration.connection.CoapClientConnectorTest.testPostRequestCon  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError
+	at programmingtheiot.integration.connection.CoapClientConnectorTest.testPostRequestCon(CoapClientConnectorTest.java:140)
+
+programmingtheiot.integration.connection.CoapClientConnectorTest.testPostRequestNon  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError
+	at programmingtheiot.integration.connection.CoapClientConnectorTest.testPostRequestNon(CoapClientConnectorTest.java:158)
+
+programmingtheiot.integration.connection.CoapClientConnectorTest.testGetRequestCon  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError
+	at programmingtheiot.integration.connection.CoapClientConnectorTest.testGetRequestCon(CoapClientConnectorTest.java:111)
+
+programmingtheiot.integration.connection.CoapClientConnectorTest.testGetRequestNon  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.AssertionError
+	at programmingtheiot.integration.connection.CoapClientConnectorTest.testGetRequestNon(CoapClientConnectorTest.java:122)
+
+programmingtheiot.integration.connection.CoapClientConnectorTest.testDeleteRequestCon  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError
+	at programmingtheiot.integration.connection.CoapClientConnectorTest.testDeleteRequestCon(CoapClientConnectorTest.java:205)
+
+programmingtheiot.integration.connection.CoapClientConnectorTest.testDeleteRequestNon  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError
+	at programmingtheiot.integration.connection.CoapClientConnectorTest.testDeleteRequestNon(CoapClientConnectorTest.java:216)
+
