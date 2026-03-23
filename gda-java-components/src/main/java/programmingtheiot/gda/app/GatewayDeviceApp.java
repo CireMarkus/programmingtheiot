@@ -172,7 +172,6 @@ public class GatewayDeviceApp
 		} catch (Exception e) {
 			_Logger.log(Level.SEVERE, "Failed to cleanly stop GDA. Exiting.", e);
 		}
-		//test 
 		//System.exit(code);
 	}
 	
