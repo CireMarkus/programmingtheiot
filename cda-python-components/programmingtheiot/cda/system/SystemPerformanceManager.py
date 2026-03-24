@@ -10,6 +10,7 @@
 # Programming the Internet of Things project.
 # 
 
+from email.policy import default
 import logging
 
 from apscheduler.schedulers.background import BackgroundScheduler
@@ -31,6 +32,19 @@ class SystemPerformanceManager(object):
 	"""
 
 	def __init__(self):
+		# configUtil = ConfigUtil()
+		# self.pollRate = \
+        # 	configUtil.getInteger( \
+    	# 		section = ConfigConst.CONSTRAINED_DEVICE, key= ConfigConst.POLL_CYCLES_KEY, defaultVal = ConfigConst.DEFAULT_POLL_CYCLES)
+        
+		# self.locationID = \
+		# 	configUtil.getProperty( \
+		# 		section= ConfigConst.CONSTRAINED_DEVICE, key= ConfigConst.DEVICE_LOCATION_ID_KEY, defaultVal=ConfigConst.NOT_SET)
+
+		# if self.pollRate <= 0: 
+		# 	self.pollRate = ConfigConst.DEFAULT_POLL_CYCLES
+
+		# self.dataMsgListener = None
 		pass
 
 	def handleTelemetry(self):
@@ -40,7 +54,11 @@ class SystemPerformanceManager(object):
 		pass
 	
 	def startManager(self):
+		logging.info("Starting System Peformance Manager....")
+		logging.info("System Peformance Manager Started.")
 		pass
 		
 	def stopManager(self):
+		logging.info("Stopping System Performance Manager....")
+		logging.info("System Performance Manager Stopped.")
 		pass

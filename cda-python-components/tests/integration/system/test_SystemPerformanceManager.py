@@ -47,12 +47,13 @@ class SystemPerformanceManagerTest(unittest.TestCase):
 		pass
 
 	def tearDown(self):
+     
 		pass
 
 	def testStartAndStopManager(self):
 		self.spMgr.startManager()
 		
-		sleep(60)
+		sleep(10)
 		
 		self.spMgr.stopManager()
 
