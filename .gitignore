@@ -5,10 +5,3 @@ gda-java-components/target/*
 *.pyd
 __pycache__/**
 .vscode/
-cda-python-components/.vscode/
-cda-python-components/.vscode/settings.json
-cda-python-components/programmingtheiot/cda/app/__pycache__/ConstrainedDeviceApp.cpython-313.pyc
-cda-python-components/programmingtheiot/cda/system/__pycache__/BaseSystemUtilTask.cpython-313.pyc
-cda-python-components/programmingtheiot/cda/system/__pycache__/SystemCpuUtilTask.cpython-313.pyc
-cda-python-components/programmingtheiot/cda/system/__pycache__/SystemPerformanceManager.cpython-313.pyc
-cda-python-components/tests/integration/system/__pycache__/test_SystemPerformanceManager.cpython-313.pyc
