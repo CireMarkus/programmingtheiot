@@ -1,2 +1,6 @@
 programmingtheiot.code-workspace
 gda-java-components/target/*
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
