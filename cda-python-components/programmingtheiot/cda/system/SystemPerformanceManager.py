@@ -20,8 +20,8 @@ import programmingtheiot.common.ConfigConst as ConfigConst
 from programmingtheiot.common.ConfigUtil import ConfigUtil
 from programmingtheiot.common.IDataMessageListener import IDataMessageListener
 
-from programmingtheiot.cda.system.SystemCpuUtilTask import SystemCpuUtilTask
-from programmingtheiot.cda.system.SystemMemUtilTask import SystemMemUtilTask
+from programmingtheiot.cda.system.SystemUtilTasks import SystemCpuUtilTask
+from programmingtheiot.cda.system.SystemUtilTasks import SystemMemUtilTask
 
 from programmingtheiot.data.SystemPerformanceData import SystemPerformanceData
 
