@@ -10,7 +10,7 @@
 import logging
 import unittest
 
-from programmingtheiot.cda.system.SystemUtilTasks import SystemCpuUtilTask
+from programmingtheiot.cda.system.SystemUtilTasks import SystemDiskUtilTask
 
 class SystemCpuUtilTaskTest(unittest.TestCase):
 	"""
@@ -24,8 +24,8 @@ class SystemCpuUtilTaskTest(unittest.TestCase):
 	@classmethod
 	def setUpClass(self):
 		logging.basicConfig(format = '%(asctime)s:%(module)s:%(levelname)s:%(message)s', level = logging.DEBUG)
-		logging.info("Testing SystemCpuUtilTask class...")
-		self.cpuUtilTask = SystemCpuUtilTask()
+		logging.info("Testing SystemDiskUtilTask class...")
+		self.diskUtilTask = SystemDiskUtilTask()
 		
 	def setUp(self):
 		pass
@@ -34,10 +34,10 @@ class SystemCpuUtilTaskTest(unittest.TestCase):
 		pass
 
 	def testGetTelemetryValue(self):
-		val = self.cpuUtilTask.getTelemetryValue()
+		val = self.diskUtilTask.getTelemetryValue()
 		
 		self.assertGreaterEqual(val, 0.0)
-		logging.info("CPU utilization: %s", str(val))
+		logging.info("Disk utilization: %s", str(val))
 
 if __name__ == "__main__":
 	unittest.main()
