@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: programmingtheiot.integration.connection.MqttClientConnectorTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.131 s <<< FAILURE! - in programmingtheiot.integration.connection.MqttClientConnectorTest
-programmingtheiot.integration.connection.MqttClientConnectorTest.testPublishAndSubscribe  Time elapsed: 0.006 s  <<< FAILURE!
-java.lang.AssertionError
-	at programmingtheiot.integration.connection.MqttClientConnectorTest.testPublishAndSubscribe(MqttClientConnectorTest.java:103)
-
