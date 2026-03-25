@@ -41,10 +41,18 @@ class SystemMemUtilTask(BaseSystemUtilTask):
 	Class to return Memory performance data. 
 	
 	"""
-
 	def __init__(self):
 		super(SystemMemUtilTask,self).__init__(name=ConfigConst.MEM_UTIL_NAME,typeID=ConfigConst.MEM_UTIL_TYPE)
 	
 	def getTelemetryValue(self) -> float:
 		return psutil.virtual_memory().percent
 				
+class SystemDiskUtilTask(BaseSystemUtilTask):
+    """
+    Class to return the disk usage. 
+    """
+    def __init__(self):
+        super(SystemDiskUtilTask,self).__init__(name=ConfigConst.DISK_UTIL_NAME,typeID=ConfigConst.DISK_UTIL_TYPE)
+    
+    def getTelemetryValue(self) -> float:
+        return psutil.disk_usage("/").percent
