@@ -17,6 +17,9 @@ configuration values or when default values may be needed.
 # General Names and Defaults
 #
 
+from tkinter import N
+
+
 NOT_SET = 'Not Set'
 
 DEFAULT_HOST             = 'localhost'
@@ -89,6 +92,8 @@ IS_RESPONSE_PROP = 'isResponse'
 CPU_UTIL_PROP    = 'cpuUtil'
 DISK_UTIL_PROP   = 'diskUtil'
 MEM_UTIL_PROP    = 'memUtil'
+NET_IN_UTIL_PROP = 'netInUtil'
+NET_OUT_UTIL_PROP= 'netOutUtil' 
 
 ACTION_ID_PROP             = 'actionID'
 DATA_URI_PROP              = 'dataURI'
@@ -165,10 +170,14 @@ SYSTEM_PERF_TYPE          = 9000
 CPU_UTIL_TYPE             = 9001
 DISK_UTIL_TYPE            = 9002
 MEM_UTIL_TYPE             = 9003
+NET_IN_UTIL_TYPE          = 9004
+NET_OUT_UTIL_TYPE         = 9005
 
-CPU_UTIL_NAME  = 'DeviceCpuUtil'
-DISK_UTIL_NAME = 'DeviceDiskUtil'
-MEM_UTIL_NAME  = 'DeviceMemUtil'
+CPU_UTIL_NAME     = 'DeviceCpuUtil'
+DISK_UTIL_NAME    = 'DeviceDiskUtil'
+MEM_UTIL_NAME     = 'DeviceMemUtil'
+NET_IN_UTIL_NAME  = 'DeviceNetInUtil'
+NET_OUT_UTIL_NAME = 'DeviceNetOutUtil'
 
 #####
 # typical topic naming conventions
@@ -209,6 +218,7 @@ MQTT    = 'Mqtt'
 COAP    = 'Coap'
 OPCUA   = 'Opcua'
 SMTP    = 'Smtp'
+
 
 DEVICE_ID_KEY          = 'deviceID'
 DEVICE_LOCATION_ID_KEY = 'deviceLocationID'
