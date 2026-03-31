@@ -3,5 +3,5 @@ gda-java-components/target/*
 *.pyc
 *.pyo
 *.pyd
-__pycache__/**
+**/__pycache__/**
 .vscode/
