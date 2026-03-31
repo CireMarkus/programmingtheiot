@@ -167,6 +167,8 @@ public class ConfigConst
 	public static final String UPDATE_NOTIFICATIONS_MSG      = "UpdateMsg";
 	public static final String RESOURCE_REGISTRATION_REQUEST = "ResourceRegRequest";
 
+	public static final String ROOT_DIR = "/plant_hub";
+
 	/*****
 	 * Configuration Sections, Keys and Defaults
 	 */
