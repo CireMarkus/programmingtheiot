@@ -35,8 +35,9 @@ public class SystemPerformanceManager
 	// private var's
 	private static final Logger _Logger = Logger.getLogger(SystemPerformanceManager.class.getName());
 	private int pollRate = ConfigConst.DEFAULT_POLL_CYCLES;
-	private SystemCpuUtilTask cpuUtil = null;
-	private SystemMemUtilTask memUtil = null;
+	private SystemCpuUtilTask  cpuUtil  = null;
+	private SystemMemUtilTask  memUtil  = null;
+	private SystemDiskUtilTask diskUtil = null; 
 
 	private ScheduledExecutorService schedExecSvc = null;
 	private Runnable taskRunner = null;
@@ -59,8 +60,9 @@ public class SystemPerformanceManager
 		}
 
 		this.schedExecSvc = Executors.newScheduledThreadPool(1);
-		this.cpuUtil = new SystemCpuUtilTask();
-		this.memUtil = new SystemMemUtilTask();
+		this.cpuUtil  = new SystemCpuUtilTask();
+		this.memUtil  = new SystemMemUtilTask();
+		this.diskUtil = new SystemDiskUtilTask();
 
 		this.taskRunner = () -> {
 			this.handleTelemetry();;
@@ -101,9 +103,12 @@ public class SystemPerformanceManager
 	}
 	
 	public void handleTelemetry(){
-		float cpuUtil = this.cpuUtil.getTelemetryValue();
-		float memUtil = this.memUtil.getTelemetryValue();
+		float cpuUtil  = this.cpuUtil.getTelemetryValue();
+		float memUtil  = this.memUtil.getTelemetryValue();
+		float diskUtil = this.diskUtil.getTelemetryValue();
 
-		_Logger.fine("CPU utilization: " + cpuUtil + ", Mem utilization: " + memUtil);
+		_Logger.info("CPU utilization: " + cpuUtil + "\n\n");
+		_Logger.info("Mem utilization: " + memUtil + "\n\n");
+		_Logger.info("Disk utilization: " + diskUtil + "\n\n");
 	}
 }

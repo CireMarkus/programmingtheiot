@@ -80,9 +80,4 @@ public class SystemDiskUtilTaskTest {
 		}
 	}
 
-	@Test
-	public void testGetAllDiskData(){
-		for (int = 0; i <)
-	}
-
 }
