@@ -5,3 +5,4 @@ gda-java-components/target/*
 *.pyd
 **/__pycache__/**
 .vscode/
+cda-python-components/programmingtheiot/data/__pycache__/**
