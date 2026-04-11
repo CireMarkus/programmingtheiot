@@ -23,25 +23,61 @@ class SystemPerformanceData(BaseIotData):
 	
 	def __init__(self, d = None):
 		super(SystemPerformanceData, self).__init__(name = ConfigConst.SYSTEM_PERF_MSG, typeID = ConfigConst.SYSTEM_PERF_TYPE, d = d)
-		pass
+		
+		self.cpuUtil    = ConfigConst.DEFAULT_VAL
+		self.memUtil    = ConfigConst.DEFAULT_VAL
+		self.diskUtil   = ConfigConst.DEFAULT_VAL
+		self.netInUtil  = ConfigConst.DEFAULT_VAL
+		self.netOutUtil = ConfigConst.DEFAULT_VAL
 	
 	def getCpuUtilization(self):
-		pass
+		return self.cpuUtil
 	
 	def getDiskUtilization(self):
-		pass
+		return self.diskUtil
 	
 	def getMemoryUtilization(self):
-		pass
+		return self.memUtil
+	
+	def getNetInUtilization(self):
+		return self.netInUtil
+
+	def getNetOutUtilization(self):
+		return self.netOutUtil
 	
 	def setCpuUtilization(self, cpuUtil):
-		pass
+		self.updateTimeStamp()
+		self.cpuUtil = cpuUtil
 	
 	def setDiskUtilization(self, diskUtil):
-		pass
+		self.updateTimeStamp()
+		self.diskUtil = diskUtil
 	
 	def setMemoryUtilization(self, memUtil):
-		pass
+		self.updateTimeStamp()
+		self.memUtil = memUtil
+	
+	def setNetInUtilTask(self, netInUtil):
+		self.updateTimeStamp()
+		self.netInUtil = netInUtil
+
+	def setNetOutUtilTask(self,netOutUtil):
+		self.updateTimeStamp()
+		self.netOutUtil = netOutUtil
 	
 	def _handleUpdateData(self, data):
-		pass
+		if data and isinstance(data, SystemPerformanceData):
+			self.cpuUtil     = data.getCpuUtilization()
+			self.diskUtil    = data.getDiskUtilization()
+			self.memUtil     = data.getMemUtilization()
+			self.netInUtil   = data.getNetInUtilization()
+			self.netOutUtil  = data.getNetOutUtilization()
+
+	def __str__(self):
+		return "System Performance Data:\n\n \
+		{}={}\n{}={}\n{}={}\n{}={}\n{}={}\n" \
+		.format("CPU Utilization",self.cpuUtil \
+				,"Disk Utilization",self.diskUtil \
+        		,"Memory Utilization",self.memUtil \
+				,"NetOut Utilization",self.netOutUtil\
+                ,"NetIn Utilization",self.netInUtil)
