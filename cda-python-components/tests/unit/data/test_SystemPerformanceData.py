@@ -27,6 +27,8 @@ class SystemPerformanceDataTest(unittest.TestCase):
 	DEFAULT_CPU_UTIL_DATA  = 10.0
 	DEFAULT_DISK_UTIL_DATA = 10.0
 	DEFAULT_MEM_UTIL_DATA  = 10.0
+	DEFAULT_NETIN_UTIL_DATA  = 10.0
+	DEFAULT_NETOUT_UTIL_DATA  = 10.0
 	
 	@classmethod
 	def setUpClass(self):
@@ -47,6 +49,9 @@ class SystemPerformanceDataTest(unittest.TestCase):
 		
 		self.assertEqual(spd.getCpuUtilization(), ConfigConst.DEFAULT_VAL)
 		self.assertEqual(spd.getMemoryUtilization(), ConfigConst.DEFAULT_VAL)
+		self.assertEqual(spd.getDiskUtilization(), ConfigConst.DEFAULT_VAL)
+		self.assertEqual(spd.getNetInUtilization(), ConfigConst.DEFAULT_VAL)
+		self.assertEqual(spd.getNetOutUtilization(), ConfigConst.DEFAULT_VAL)
 		
 		logging.info("System perf data as string: " + str(spd))
 
@@ -57,6 +62,10 @@ class SystemPerformanceDataTest(unittest.TestCase):
 		
 		self.assertEqual(spd.getCpuUtilization(), self.DEFAULT_CPU_UTIL_DATA)
 		self.assertEqual(spd.getMemoryUtilization(), self.DEFAULT_MEM_UTIL_DATA)
+		self.assertEqual(spd.getDiskUtilization(), self.DEFAULT_DISK_UTIL_DATA)
+		self.assertEqual(spd.getNetInUtilization(), self.DEFAULT_NETIN_UTIL_DATA)
+		self.assertEqual(spd.getNetOutUtilization(), self.DEFAULT_NETOUT_UTIL_DATA)
+
 
 	def testFullUpdate(self):
 		spd = SystemPerformanceData()
@@ -66,6 +75,9 @@ class SystemPerformanceDataTest(unittest.TestCase):
 		
 		self.assertEqual(spd.getCpuUtilization(), ConfigConst.DEFAULT_VAL)
 		self.assertEqual(spd.getMemoryUtilization(), ConfigConst.DEFAULT_VAL)
+		self.assertEqual(spd.getDiskUtilization(), ConfigConst.DEFAULT_VAL)
+		self.assertEqual(spd.getNetInUtilization(), ConfigConst.DEFAULT_VAL)
+		self.assertEqual(spd.getNetOutUtilization(), ConfigConst.DEFAULT_VAL)
 		
 		spd.updateData(spd2)
 		
@@ -73,6 +85,9 @@ class SystemPerformanceDataTest(unittest.TestCase):
 		
 		self.assertEqual(spd.getCpuUtilization(), self.DEFAULT_CPU_UTIL_DATA)
 		self.assertEqual(spd.getMemoryUtilization(), self.DEFAULT_MEM_UTIL_DATA)
+		self.assertEqual(spd.getDiskUtilization(), self.DEFAULT_DISK_UTIL_DATA)
+		self.assertEqual(spd.getNetInUtilization(), self.DEFAULT_NETIN_UTIL_DATA)
+		self.assertEqual(spd.getNetOutUtilization(), self.DEFAULT_NETOUT_UTIL_DATA)
 	
 	def _createTestSystemPerformanceData(self):
 		spd = SystemPerformanceData()
@@ -80,6 +95,9 @@ class SystemPerformanceDataTest(unittest.TestCase):
 		
 		spd.setCpuUtilization(self.DEFAULT_CPU_UTIL_DATA)
 		spd.setMemoryUtilization(self.DEFAULT_MEM_UTIL_DATA)
+		spd.setDiskUtilization(self.DEFAULT_DISK_UTIL_DATA)
+		spd.setNetInUtilization(self.DEFAULT_NETIN_UTIL_DATA)
+		spd.setNetOutUtilization(self.DEFAULT_NETOUT_UTIL_DATA)
 		
 		logging.info("System perf data as string: " + str(spd))
 		
