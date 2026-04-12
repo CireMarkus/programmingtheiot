@@ -21,7 +21,7 @@ class ActuatorData(BaseIotData):
 	"""
 
 	def __init__(self, typeID: int = ConfigConst.DEFAULT_ACTUATOR_TYPE, name = ConfigConst.NOT_SET, d = None):
-		super(ActuatorData, self).__init__(name = name, typeID = tyeID, d = d)
+		super(ActuatorData, self).__init__(name = name, typeID = typeID, d = d)
 		self.value = ConfigConst.DEFAULT_VAL
 		self.command = ConfigConst.DEFAULT_COMMAND
 		self.stateData = ""
@@ -61,7 +61,7 @@ class ActuatorData(BaseIotData):
 		if data and isinstance(data, ActuatorData):
 			self.command = data.getCommand()
 			self.stateData = data.getStateData()
-			self.value = data.getvalue()
+			self.value = data.getValue()
 			self.isResponse = data.isResponseFlagEnabled()
 
 	def __str__(self):
