@@ -57,11 +57,11 @@ class SystemPerformanceData(BaseIotData):
 		self.updateTimeStamp()
 		self.memUtil = memUtil
 	
-	def setNetInUtilTask(self, netInUtil):
+	def setNetInUtilization(self, netInUtil):
 		self.updateTimeStamp()
 		self.netInUtil = netInUtil
 
-	def setNetOutUtilTask(self,netOutUtil):
+	def setNetOutUtilization(self,netOutUtil):
 		self.updateTimeStamp()
 		self.netOutUtil = netOutUtil
 	
@@ -69,7 +69,7 @@ class SystemPerformanceData(BaseIotData):
 		if data and isinstance(data, SystemPerformanceData):
 			self.cpuUtil     = data.getCpuUtilization()
 			self.diskUtil    = data.getDiskUtilization()
-			self.memUtil     = data.getMemUtilization()
+			self.memUtil     = data.getMemoryUtilization()
 			self.netInUtil   = data.getNetInUtilization()
 			self.netOutUtil  = data.getNetOutUtilization()
 
