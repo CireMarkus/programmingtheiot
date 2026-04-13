@@ -30,7 +30,7 @@ class SensorData(BaseIotData):
 		
 		@return int
 		"""
-		return self.sensorType
+		return self.sensorType 
 	
 	def getValue(self) -> float:
 		return self.value
