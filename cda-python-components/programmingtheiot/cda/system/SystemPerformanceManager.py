@@ -62,7 +62,7 @@ class SystemPerformanceManager(object):
 			self.scheduler.start()
 			logging.info("System Peformance Manager Started.")
 		else:
-			logging.warning("SystemPerformanceManager scheudler already started. Ignoring.")
+			logging.warning("SystemPerformanceManager scheduler already started. Ignoring.")
 		
 	def stopManager(self):
 		logging.info("Stopping System Performance Manager....")
