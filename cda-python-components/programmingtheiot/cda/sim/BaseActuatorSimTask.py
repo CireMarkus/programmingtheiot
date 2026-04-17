@@ -16,6 +16,7 @@ import random
 import programmingtheiot.common.ConfigConst as ConfigConst
 
 from programmingtheiot.data.ActuatorData import ActuatorData
+logging.basicConfig(format = '%(asctime)s:%(name)s:%(levelname)s:%(message)s', level = logging.DEBUG)
 
 class BaseActuatorSimTask():
 	"""
@@ -24,7 +25,16 @@ class BaseActuatorSimTask():
 	"""
 
 	def __init__(self, name: str = ConfigConst.NOT_SET, typeID: int = ConfigConst.DEFAULT_ACTUATOR_TYPE, simpleName: str = "Actuator"):
-		pass
+		self.latestActuatorResponse = ActuatorData(typeID = typeID, name = name)
+		self.latestActuatorResponse.setAsResponse()
+
+		self.name 			  = name 
+		self.typeID 		  = typeID
+		self.simpleName 	  = simpleName
+		self.lastKnownCommand = ConfigConst.DEFAULT_COMMAND
+		self.lastKnownValue   = ConfigConst.DEFAULT_VAL
+		self.lastKnownState   = ""
+		
 		
 	def getLatestActuatorResponse(self) -> ActuatorData:
 		"""
@@ -35,18 +45,57 @@ class BaseActuatorSimTask():
 	def getSimpleName(self) -> str:
 		pass
 	
-	def updateActuator(self, data: ActuatorData) -> bool:
+	def updateActuator(self, data: ActuatorData) -> ActuatorData:
 		"""
 		NOTE: If 'data' is valid, the actuator-specific work can be delegated
 		as follows:
-		 - if command is ON: call self._activateActuator()
-		 - if command is OFF: call self._deactivateActuator()
+			- if command is ON: call self._activateActuator()
+			- if command is OFF: call self._deactivateActuator()
 		
 		Both of these methods will have a generic implementation (logging only) within
 		this base class, although the sub-class may override if preferable.
 		"""
-		pass
-		
+		if data and data.getTypeID == self.typeID: 
+			responseCode = ConfigConst.DEFAULT_STATUS
+			
+			curCommand = data.getCommand()
+			curVal 	   = data.getValue()
+			curState   = data.getStateData()
+			
+			if curCommand == self.lastKnownCommand \
+			and curVal == self.lastKnownValue \
+			and curState == self.lastKnownState:
+				logging.debug(f"New actuator command, value and state are repeats. Ignoring: {curCommand} {curVal}")
+			else:
+				logging.debug(f"New actuator command and value to be applied: {curCommand} {curVal}")
+    
+				if curCommand == ConfigConst.COMMAND_ON:
+					logging.info("Activating actuator....")
+					responseCode = self._activateActuator(val = data.getValue(), stateData= data.getStateData())
+				elif curCommand == ConfigConst.COMMAND_OFF:
+					logging.info("Deactivating actuator...")
+					responseCode = self._deactivateActuator(val = data.getValue(), stateData= data.getStateData())
+				else: 
+					logging.warning(f"ActuatorData command is unkown. Ignoring: {curCommand}")
+					responseCode = -1
+				
+				# update last known actuator values
+				self.lastKnownCommand = curCommand
+				self.lastKnownValue = curVal
+				self.lastKnownState = curState
+				
+				# create the response
+				actuatorResponse = ActuatorData()
+				actuatorResponse.updateData(data)
+				actuatorResponse.setStatusCode(responseCode)
+				actuatorResponse.setAsResponse()
+				
+				self.latestActuatorResponse.updateData(actuatorResponse)
+				
+				return actuatorResponse
+		return None
+    
+    
 	def _activateActuator(self, val: float = ConfigConst.DEFAULT_VAL, stateData: str = None) -> int:
 		"""
 		Implement basic logging. Actuator-specific functionality should be implemented by sub-class.
@@ -54,7 +103,14 @@ class BaseActuatorSimTask():
 		@param val The actuation activation value to process.
 		@param stateData The string state data to use in processing the command.
 		"""
-		pass
+		msg = "\n*******"
+		msg = msg + "\n* O N *"
+		msg = msg + "\n*******"
+		msg = msg + "\n" + self.name + " VALUE -> " + str(val) + "\n======="
+			
+		logging.info("Simulating %s actuator ON: %s", self.name, msg)
+		
+		return 0
 		
 	def _deactivateActuator(self, val: float = ConfigConst.DEFAULT_VAL, stateData: str = None) -> int:
 		"""
@@ -63,5 +119,12 @@ class BaseActuatorSimTask():
 		@param val The actuation activation value to process.
 		@param stateData The string state data to use in processing the command.
 		"""
-		pass
+		msg = "\n*******"
+		msg = msg + "\n* OFF *"
+		msg = msg + "\n*******"
+		
+		logging.info("Simulating %s actuator OFF: %s", self.name, msg)
+				
+		return 0
+
 		

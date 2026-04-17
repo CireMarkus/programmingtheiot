@@ -78,7 +78,7 @@ class BaseSensorSimTask():
 		"""
 		if not self.lastestSensorData: 
 			self.generateTelemetry()
-		return self.lastestSensorData.getvaleu()
+		return self.lastestSensorData.getValue()
 	
 	def getLatestTelemetry(self) -> SensorData:
 		"""
