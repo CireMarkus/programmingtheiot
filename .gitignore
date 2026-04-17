@@ -6,3 +6,4 @@ gda-java-components/target/*
 **/__pycache__/**
 .vscode
 **/settings.json
+cda-python-components/programmingtheiot/common/ConfigConst.py
