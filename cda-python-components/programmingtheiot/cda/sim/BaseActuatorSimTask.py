@@ -55,7 +55,7 @@ class BaseActuatorSimTask():
 		Both of these methods will have a generic implementation (logging only) within
 		this base class, although the sub-class may override if preferable.
 		"""
-		if data and data.getTypeID == self.typeID: 
+		if data and data.getTypeID() == self.typeID: 
 			responseCode = ConfigConst.DEFAULT_STATUS
 			
 			curCommand = data.getCommand()
