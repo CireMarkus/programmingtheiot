@@ -7,3 +7,4 @@ gda-java-components/target/*
 .vscode
 **/settings.json
 cda-python-components/programmingtheiot/common/ConfigConst.py
+.piot
